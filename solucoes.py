@@ -1,9 +1,6 @@
 def sao_anagramas(string1, string2):
-    normalizada1 = "".join(char.lower() for char in string1 if char != " ")
-    normalizada2 = "".join(char.lower() for char in string2 if char != " ")
-
-    if not normalizada1 or not normalizada2:
-        return False
+    normalizada1 = "".join(char.lower() for char in string1 if not char.isspace())
+    normalizada2 = "".join(char.lower() for char in string2 if not char.isspace())
 
     return sorted(normalizada1) == sorted(normalizada2)
 
