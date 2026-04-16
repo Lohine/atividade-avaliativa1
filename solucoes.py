@@ -14,9 +14,6 @@ def cifra_de_cesar(texto, deslocamento):
         elif "A" <= caractere <= "Z":
             novo_codigo = (ord(caractere) - ord("A") + deslocamento) % 26
             resultado += chr(ord("A") + novo_codigo)
-        elif "0" <= caractere <= "9":
-            novo_codigo = (ord(caractere) - ord("0") + deslocamento) % 10
-            resultado += chr(ord("0") + novo_codigo)
         else:
             resultado += caractere
 
