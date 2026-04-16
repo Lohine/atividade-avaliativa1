@@ -5,8 +5,19 @@ def sao_anagramas(string1, string2):
     return sorted(normalizada1) == sorted(normalizada2)
 
 def cifra_de_cesar(texto, deslocamento):
-    # TODO: Implementar a lógica
-    pass
+    resultado = ""
+
+    for caractere in texto:
+        if "a" <= caractere <= "z":
+            novo_codigo = (ord(caractere) - ord("a") + deslocamento) % 26
+            resultado += chr(ord("a") + novo_codigo)
+        elif "A" <= caractere <= "Z":
+            novo_codigo = (ord(caractere) - ord("A") + deslocamento) % 26
+            resultado += chr(ord("A") + novo_codigo)
+        else:
+            resultado += caractere
+
+    return resultado
 
 def encontrar_maior_palavra(frase):
     # TODO: Implementar a lógica
